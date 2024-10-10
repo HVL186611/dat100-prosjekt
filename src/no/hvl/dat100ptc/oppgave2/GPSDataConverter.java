@@ -9,12 +9,12 @@ public class GPSDataConverter {
 	private static int TIME_STARTINDEX = 11; 
 
 	public static int toSeconds(String timestr) {
+		int hr = Integer.parseInt(timestr.substring(12,13));
+		int min = Integer.parseInt(timestr.substring(14,16));
+		int secs = Integer.parseInt(timestr.substring(17,19));
+		int secondssum = (((hr*60)*60) + (min*60) + secs);
 		
-		int secs;
-		int hr, min, sec;
-		
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
+		return secondssum;
 		
 	}
 
