@@ -4,16 +4,13 @@ import no.hvl.dat100ptc.TODO;
 
 public class GPSPoint {
 
-<<<<<<< HEAD
+
 	private int time;
 	private double latitude;
 	private double longitude;
 	double elevation;
 	
-=======
-	// TODO - objektvariable
-	private int time;
->>>>>>> 2ca5eb0ffbf0fbbe2193732e18e6f01414c2ba05
+
 	
 	public GPSPoint(int time, double latitude, double longitude, double elevation) {
 		this.time = time;
