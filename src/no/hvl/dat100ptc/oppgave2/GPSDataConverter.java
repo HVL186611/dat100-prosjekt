@@ -20,10 +20,14 @@ public class GPSDataConverter {
 
 	public static GPSPoint convert(String timeStr, String latitudeStr, String longitudeStr, String elevationStr) {
 
-		GPSPoint gpspoint;
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
+		
+		int conhr = Integer.parseInt(timeStr.substring(12,13)); //out of bounds for (12,13) ????
+		int conmin = Integer.parseInt(timeStr.substring(14,16));
+		int consecs = Integer.parseInt(timeStr.substring(17,19));
+		int consum = (((conhr*60)*60) + (conmin*60) + consecs);
+		String consumstr = Integer.toString(consum);
+		GPSPoint gpspoint = convert(consumstr, latitudeStr, longitudeStr, elevationStr); //Bruk Convert();
+		return gpspoint; //skal returnere sum + latitudetr + longitudeStr + elevationStr
 		
 	}
 	
