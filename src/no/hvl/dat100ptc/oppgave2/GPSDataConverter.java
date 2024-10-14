@@ -4,7 +4,7 @@ import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSDataConverter {
-
+	
 	
 	private static int TIME_STARTINDEX = 11; 
 
@@ -20,11 +20,7 @@ public class GPSDataConverter {
 
 	public static GPSPoint convert(String timeStr, String latitudeStr, String longitudeStr, String elevationStr) {
 
-		
-		int conhr = Integer.parseInt(timeStr.substring(12,13)); //out of bounds for (12,13) ????
-		int conmin = Integer.parseInt(timeStr.substring(14,16));
-		int consecs = Integer.parseInt(timeStr.substring(17,19));
-		int consum = (((conhr*60)*60) + (conmin*60) + consecs);
+		int consum = toSeconds(timeStr); //Funker ikke.
 		String consumstr = Integer.toString(consum);
 		GPSPoint gpspoint = convert(consumstr, latitudeStr, longitudeStr, elevationStr); //Bruk Convert();
 		return gpspoint; //skal returnere sum + latitudetr + longitudeStr + elevationStr
