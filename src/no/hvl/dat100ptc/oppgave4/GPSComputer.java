@@ -28,21 +28,24 @@ public class GPSComputer {
 	
 	public double totalDistance() {
 
-		double distance = 0;
+		double d = 0;
 		
-		for (int i = 0; i < this.gpspoints.length(); i++)
+		for (int i = 1; i < this.gpspoints.length; i++) 
+			d += GPSUtils.distance(this.gpspoints[i - 1], this.gpspoints[i]);
 		
-		return distance;
+		return d;
 	}
 
 	public double totalElevation() {
 
-		double elevation = 0;
-
-		throw new UnsupportedOperationException(TODO.method());
+		double elevation = this.gpspoints[0].getElevation();
 		
-		// TODO 
+		for (int i = 1; i < this.gpspoints.length; i++) {
+			double e = this.gpspoints[i].getElevation();
+			if (e > elevation) elevation = e;
+		}
 		
+		return elevation;
 	}
 
 	public int totalTime() {
