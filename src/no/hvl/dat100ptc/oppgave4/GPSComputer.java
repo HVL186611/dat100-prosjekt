@@ -16,7 +16,6 @@ public class GPSComputer {
 
 		GPSData gpsdata = GPSDataFileReader.readGPSFile(filename);
 		gpspoints = gpsdata.getGPSPoints();
-
 	}
 
 	public GPSComputer(GPSPoint[] gpspoints) {
@@ -30,11 +29,10 @@ public class GPSComputer {
 	public double totalDistance() {
 
 		double distance = 0;
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO
-
+		
+		for (int i = 0; i < this.gpspoints.length(); i++)
+		
+		return distance;
 	}
 
 	public double totalElevation() {
