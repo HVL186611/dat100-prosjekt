@@ -31,10 +31,6 @@ public class GPSUtils {
 			}
 		}
 		return min;
-
-		// TODO 
-		//Split tekst.
-		
 	}
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
