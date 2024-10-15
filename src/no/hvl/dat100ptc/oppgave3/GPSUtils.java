@@ -58,12 +58,21 @@ public class GPSUtils {
 	public static double distance(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
 		double d;
-		double latitude1, longitude1, latitude2, longitude2;
+		double lat1, long1, lat2, long2;
 
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO 
-		// Definer denne for å få koden til å funke.
+		lat1 = gpspoint1.getLatitude();
+		long1 = gpspoint1.getLongitude();
+		lat2 = gpspoint2.getLatitude();
+		long2 = gpspoint2.getLongitude();
+		
+		lat1 = Math.toRadians(lat1);
+		long1 = Math.toRadians(long1);
+		lat2 = Math.toRadians(lat2);
+		long2 = Math.toRadians(long2);
+		
+		//double distance = Math.sqrt(Math.pow(lat2 - lat1, 2) + Math.pow(long2 - long1, 2))*R;
+		double distance = Math.acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(long2-long1))*R;
+		return distance;
 	}
 	
 	private static double compute_a(double phi1, double phi2, double deltaphi, double deltadelta) {
