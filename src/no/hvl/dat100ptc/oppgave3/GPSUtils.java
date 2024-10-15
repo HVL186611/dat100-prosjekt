@@ -104,16 +104,27 @@ public class GPSUtils {
 		
 		return d / dt;
 	}
-
+	
+	private static String _formatTime(int i) {
+		String s = "00" + i;
+		return s.substring(s.length() - 2, s.length());
+	}
+	
 	public static String formatTime(int secs) {
 
 		String timestr;
 		String TIMESEP = ":";
-
-		throw new UnsupportedOperationException(TODO.method());
 		
-		// TODO 
+		int s = secs % 60;
+		int m = (secs / 60) % 60;
+		int h = secs / 3600;
 		
+		String hs = "" + h;
+		if (hs.length() == 1) hs = "0" + h;
+		
+		timestr = "  " + hs + TIMESEP + _formatTime(m) + TIMESEP + _formatTime(s);
+		
+		return timestr;
 	}
 	
 	private static int TEXTWIDTH = 10;
