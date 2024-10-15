@@ -36,12 +36,10 @@ public class GPSUtils {
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
 
 		double[] latitudes = new double[gpspoints.length];
-		for (int i = 0; i <= gpspoints.length; i++) {
+		for (int i = 0; i < gpspoints.length; i++) {
 			latitudes[i] = gpspoints[i].getLatitude(); //Tar ut latitude i fra gpspoints
 		}
 		return latitudes;
-		 
-		// TODO
 	}
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
