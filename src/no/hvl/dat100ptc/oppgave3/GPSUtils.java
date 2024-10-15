@@ -99,10 +99,10 @@ public class GPSUtils {
 		int secs;
 		double speed;
 		
-		throw new UnsupportedOperationException(TODO.method());
+		int dt = gpspoint2.getTime() - gpspoint1.getTime();
+		double d = distance(gpspoint1, gpspoint2);
 		
-		// TODO
-
+		return d / dt;
 	}
 
 	public static String formatTime(int secs) {
