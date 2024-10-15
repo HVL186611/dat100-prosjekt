@@ -35,8 +35,12 @@ public class GPSUtils {
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
 
-		throw new UnsupportedOperationException(TODO.method());
-		
+		double[] latitudes = new double[gpspoints.length];
+		for (int i = 0; i <= gpspoints.length; i++) {
+			latitudes[i] = gpspoints[i].getLatitude(); //Tar ut latitude i fra gpspoints
+		}
+		return latitudes;
+		 
 		// TODO
 	}
 
@@ -59,6 +63,7 @@ public class GPSUtils {
 		throw new UnsupportedOperationException(TODO.method());
 
 		// TODO 
+		// Definer denne for å få koden til å funke.
 	}
 	
 	private static double compute_a(double phi1, double phi2, double deltaphi, double deltadelta) {
