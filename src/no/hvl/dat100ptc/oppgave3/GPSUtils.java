@@ -45,9 +45,11 @@ public class GPSUtils {
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
 
 		
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO 
+		double[] longitudes = new double[gpspoints.length];
+		for (int i = 0; i < gpspoints.length; i++) {
+			longitudes[i] = gpspoints[i].getLongitude(); //Tar ut latitude i fra gpspoints
+		}
+		return longitudes;
 
 	}
 
@@ -128,11 +130,12 @@ public class GPSUtils {
 	private static int TEXTWIDTH = 10;
 
 	public static String formatDouble(double d) {
-
-		String str;
+		
+		String strinn = String.format("%.2f",d); //2 er mengde av desimal du vil runde det ned til og gjør det også om til en streng.
+		String str = ("      "+ strinn.replace(",", "."));
+		return str;
 
 		
-		throw new UnsupportedOperationException(TODO.method());
 		
 		// TODO
 		
