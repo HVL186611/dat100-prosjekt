@@ -1,5 +1,7 @@
 package no.hvl.dat100ptc.oppgave4;
 
+import java.util.*;
+
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 import no.hvl.dat100ptc.oppgave2.GPSData;
 import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
@@ -60,8 +62,6 @@ public class GPSComputer {
 
 		double[] speeds = new double[gpspoints.length-1];
 		
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
 		
 	}
 	
@@ -76,11 +76,7 @@ public class GPSComputer {
 
 	public double averageSpeed() {
 
-		double average = 0;
-		
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
-		
+		double total = Arrays.stream(speeds()).sum();
 	}
 
 
@@ -92,20 +88,28 @@ public class GPSComputer {
 		double kcal;
 
 		double met = 0;		
-		double speedmph = speed * MS;
+		double mph = speed * MS / 2;
+		if (mph < 10) met = 4;
+		else if (mph < 12) met = 6;
+		else if (mph < 14) met = 8;
+		else if (mph < 16) met = 10;
+		else if (mph < 20) met = 12;
+		else met = 16;
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
-		
+		return met * weight * secs / (60 * 60);
 	}
 
 	public double totalKcal(double weight) {
 
 		double totalkcal = 0;
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
 		
+		//double
+		//for (int i = 1; i < gpspoints.length; i++) {
+			
+		//}
+		
+		return kcal(weight, totalTime(), averageSpeed());
+		//Arrays.stream(this.gpspoints).mapToDouble(point -> kcal(weight, point.getTime(), point.))
 	}
 	
 	private static double WEIGHT = 80.0;
